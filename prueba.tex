@@ -13,6 +13,8 @@
 \usepackage{placeins}
 \usepackage{float}
 \usepackage{booktabs}
+\usepackage{listings}
+
 
 \graphicspath{ {images/} }
 
@@ -75,15 +77,26 @@
   \end{center}
 \end{minipage}
 
+\include{agradecimientos}
+\include{abstract}
+\include{resumen}
+
 \tableofcontents % indice de contenidos
 \listoffigures %indice de figuras
+\renewcommand\listtablename{Índice de tablas}
 \listoftables %indice de tablas
 
+\renewcommand\lstlistingname{Índice de código}
+\renewcommand\lstlistlistingname{Índice de código}
+\lstlistoflistings
+
 \bibliographystyle{apacite}
+
 \include{problema}
-\include{objetivo}
 \include{arte}
+\include{marco}
 \include{experimentos}
 \include{analisis}
+\include{conclusiones}
 \bibliography{biblio}{}	
 \end{document}
