@@ -1,0 +1,95 @@
+%template para tesis del Instituto Tecnológico Superior de Misantla
+%Creado por: José Arcángel Salazar Delgado
+%Versión: 1.0
+\chapter{Ejemplos}
+
+Ejemplo de una lista enumerada:
+
+\begin{enumerate}
+	\item uno
+	\item dos
+	\item tres
+\end{enumerate}
+
+Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing 
+elit. Duis fringilla tristique neque. Sed interdum libero ut metus. 
+Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet 
+ante lobortis sollicitudin.
+
+Ejemplo de una lista con viñetas
+
+\begin{itemize}
+	\item prueba 
+	\item prueba 
+	\item prueba
+\end{itemize}
+
+Ejemplo de insertar una figura:
+\begin{figure}[!ht]
+	\caption{Logo de la institución.}
+	\centering
+	\includegraphics[width=4cm, height=4cm]{logo-misantla.jpg}
+\end{figure}
+
+Ejemplo de una tabla:
+
+\begin{table}[h!]
+	\centering
+	\caption{Caption for the table.}
+	\label{tab:table1}
+	\begin{tabular}{ccc}
+		\toprule
+		Some & actual & content\\
+		\midrule
+		prettifies & the & content\\
+		as & well & as\\
+		using & the & booktabs package\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Otro ejemplo de tablas
+
+
+
+Ejemplo de citado \cite{Vickrey1961}.
+
+Ejemplo de citado 2 \citeA{Vickrey1961}
+
+Ejemplo de citado 3 \cite{baggio}
+
+Ejemplo de citado 4 \citeA{baggio}
+
+Ejemplo de código
+
+\begin{lstlisting}[language=Python, caption=Python example]
+import numpy as np
+
+def incmatrix(genl1,genl2):
+m = len(genl1)
+n = len(genl2)
+M = None #to become the incidence matrix
+VT = np.zeros((n*m,1), int)  #dummy variable
+
+#compute the bitwise xor matrix
+M1 = bitxormatrix(genl1)
+M2 = np.triu(bitxormatrix(genl2),1) 
+
+for i in range(m-1):
+for j in range(i+1, m):
+[r,c] = np.where(M2 == M1[i,j])
+for k in range(len(r)):
+VT[(i)*n + r[k]] = 1;
+VT[(i)*n + c[k]] = 1;
+VT[(j)*n + r[k]] = 1;
+VT[(j)*n + c[k]] = 1;
+
+if M is None:
+M = np.copy(VT)
+else:
+M = np.concatenate((M, VT), 1)
+
+VT = np.zeros((n*m,1), int)
+
+return M
+\end{lstlisting}
