@@ -1,5 +1,7 @@
-%template para tesis del Instituto Tecnológico Superior de Misantla
-%Creado por: José Arcángel Salazar Delgado
+%Plantilla para tesis del Instituto Tecnológico Superior de Misantla
+%Creada por: José Arcángel Salazar Delgado
+%Supervisó: Dr. Eddy Sánchez de la Cruz
+%Vo.Bo.: MSC. Galdino Martínez Flores.
 %Versión: 1.0
 \documentclass[dvips,12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -15,6 +17,24 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{listings}
+
+
+\lstdefinestyle{mystyle}{
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	frame=single,
+	captionpos=b
+}
+
+\lstset{style=mystyle}
 
 
 \graphicspath{ {images/} }
@@ -78,79 +98,36 @@
   \end{center}
 \end{minipage}
 
-\newpage
-
-\thispagestyle{empty}
-
-\begin{minipage}[c][0.1\textheight][c]{0.25\textwidth}
-	\begin{center}
-		\includegraphics[width=4cm, height=4cm]{logo-misantla.jpg}
-	\end{center}
-\end{minipage}
-\begin{minipage}[c][0.05\textheight][t]{0.7\textwidth}
-	\begin{center}
-		{\scshape Instituto Tecnol\'ogico Superior de Misantla}
-		\vspace{.3cm}
-		\hrule height2.5pt
-		\vspace{.1cm}
-		\hrule height1pt
-		\vspace{.3cm}
-		{\scshape  Maestr\'ia en sistemas computacionales}
-	\end{center}
-\end{minipage}
-
-\begin{minipage}[c][0.5\textheight][t]{0.25\textwidth}
-	\begin{center}
-		\hskip2pt
-		
-		\vrule width1pt height18cm 
-		\hskip1mm
-		\vrule width2.5pt height18cm
-		\hskip1mm
-		\vrule width1pt height18cm \\
-	\end{center}
-\end{minipage}
-\begin{minipage}[c][0.6\textheight][t]{0.65\textwidth}
-	\begin{center}
-		\vspace{2cm}
-		{\huge \scshape {T\'itulo de la tesis}}
-		\vspace{2cm}
-		
-		\makebox[5cm][c]{\LARGE TESIS}  \\[8pt]
-		QUE PARA OBTENER EL T\'iTULO DE:\\[5pt]
-		{\large \textbf{{t\'itulo}}}\\[40pt]            
-		PRESENTA:\\[5pt]
-		\textbf{{Nombre del tesista}}
-		
-		\vspace{1cm}
-		
-		{\small DIRECTOR DEL TRABAJO:\\ {Nombre del director del trabajo}}
-		
-		\vspace{0.5cm}
-		
-		{Lugar,}{ }{Fecha}
-	\end{center}
-\end{minipage}
-
-\include{agradecimientos}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\include{autorizacion}
 \include{dedicatoria}
-\include{abstract}
+\include{agradecimientos}
 \include{resumen}
+\include{abstract}
 
 \tableofcontents % indice de contenidos
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures %indice de figuras
+
+\cleardoublepage
 \renewcommand\listtablename{Índice de tablas}
+\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables %indice de tablas
 
+\cleardoublepage
 \renewcommand\lstlistingname{Índice de algoritmos}
 \renewcommand\lstlistlistingname{Índice de algoritmos}
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
 \lstlistoflistings
 
-\bibliographystyle{apacite}
+\cleardoublepage
+\renewcommand{\thepage}{\arabic{page}}
 
-\include{antecedentes}
-\include{marcoMetodologico}
-\include{marco}
+\include{generalidades}
+\include{marcoTeorico}
 \include{arte}
 \include{experimentos}
 \include{analisis}
@@ -159,4 +136,5 @@
 \bibliography{biblio}{}	
 \include{anexos}
 \include{ejemplos}
+\bibliographystyle{apacite}
 \end{document}
