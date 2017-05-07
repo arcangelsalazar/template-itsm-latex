@@ -5,7 +5,8 @@
 %Versión: 1.0
 \chapter{Ejemplos}
 
-Ejemplo de una lista enumerada:
+\section{Ejemplo de una lista enumerada}
+
 
 \begin{enumerate}
 	\item uno
@@ -18,7 +19,14 @@ elit. Duis fringilla tristique neque. Sed interdum libero ut metus.
 Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet 
 ante lobortis sollicitudin.
 
-Ejemplo de una lista con viñetas
+\section{Ejemplo de insertar una figura}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=4cm, height=4cm]{logo-misantla.jpg}
+	\caption{Logo de la institución.}
+\end{figure}
+
+\section{Ejemplo de una lista con viñetas}
 
 \begin{itemize}
 	\item prueba 
@@ -26,14 +34,69 @@ Ejemplo de una lista con viñetas
 	\item prueba
 \end{itemize}
 
-Ejemplo de insertar una figura:
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=4cm, height=4cm]{logo-misantla.jpg}
-	\caption{Logo de la institución.}
-\end{figure}
+\section{Ejemplos de formulas matemáticas}
 
-Ejemplo de una tabla:
+Sencilla:
+\[
+m=\frac{y_2-y_1}{x_2-x_1}
+\]
+
+Con referencia:\\
+\\
+Por ejemplo, la ecuación (\ref{eq:pythagoras}):
+
+\begin{equation}\label{eq:pythagoras}
+a^2 + b^2 = c^2 .
+\end{equation}
+
+Con referencia y comentario:
+
+\begin{equation}\label{eq:ejemplo}
+y(x_{i}) = \sin(x_{i})^{2} \ \ \textup{función seno cuadrado}
+\end{equation}
+
+
+
+Usando tabuladores:
+\begin{center}
+$t(n)= 
+\left \{
+\begin{tabular}{c}
+$0$ \\
+$36$ \\
+$5t(n-1)+6t(n-2)+4*3^n$ \\
+\end{tabular}
+\right \}
+$
+$\left (
+\begin{tabular}{c}
+si $n=0$ \\
+si $n=1$ \\
+en otros casos \\
+\end{tabular}
+\right )
+$
+\end{center}
+
+\begin{center}
+$t(n)= 
+\left \{
+\begin{tabular}{c}
+$c*n^k$ \\
+$a*T(n-b)+c*n^k$ \\
+\end{tabular}
+\right \}
+$
+$\left (
+\begin{tabular}{c}
+si $0\leq n<b$ \\
+si $n \geq b $\\
+\end{tabular}
+\right )
+$
+\end{center}
+
+\section{Ejemplos de una tabla}
 
 \begin{table}[h!]
 	\centering
@@ -50,9 +113,7 @@ Ejemplo de una tabla:
 	\caption{Ejemplo de tabla.}
 \end{table}
 
-Otro ejemplo de tablas
-
-
+\section{Ejemplos de citado}
 
 Ejemplo de citado \cite{Vickrey1961}.
 
